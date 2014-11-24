@@ -8,7 +8,8 @@ OC::$CLASSPATH['OC\Files\Cache\Shared_Cache'] = 'files_sharing/lib/cache.php';
 OC::$CLASSPATH['OC\Files\Cache\Shared_Permissions'] = 'files_sharing/lib/permissions.php';
 OC::$CLASSPATH['OC\Files\Cache\Shared_Updater'] = 'files_sharing/lib/updater.php';
 OC::$CLASSPATH['OC\Files\Cache\Shared_Watcher'] = 'files_sharing/lib/watcher.php';
-OC::$CLASSPATH['OCA\Files\Share\Api'] = 'files_sharing/lib/api.php';
+OC::$CLASSPATH['OCA\Files\Share\API\Local'] = 'files_sharing/api/local.php';
+OC::$CLASSPATH['OCA\Files\Share\API\Server2Server'] = 'files_sharing/api/server2server.php';
 OC::$CLASSPATH['OCA\Files\Share\Maintainer'] = 'files_sharing/lib/maintainer.php';
 OC::$CLASSPATH['OCA\Files\Share\Proxy'] = 'files_sharing/lib/proxy.php';
 
