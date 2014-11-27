@@ -29,6 +29,10 @@ OCP\Util::addScript('files_sharing', 'external');
 
 OC_FileProxy::register(new OCA\Files\Share\Proxy());
 
+\OC::$server->getActivityManager()->registerExtension(function() {
+		return new \OCA\Files_Sharing\Activity();
+});
+
 $config = \OC::$server->getConfig();
 if ($config->getAppValue('core', 'shareapi_enabled', 'yes') === 'yes') {
 

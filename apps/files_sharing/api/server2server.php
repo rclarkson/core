@@ -57,6 +57,11 @@ class Server2Server {
 
 			try {
 				\OCA\Files_Sharing\Helper::addServer2ServerShare($remote, $token, $name, $mountPoint, $owner, $shareWith, '', $remoteId);
+
+				\OC::$server->getActivityManager()->publishActivity(
+						'files_sharing', \OCA\Files_Sharing\Activity::SUBJECT_REMOTE_SHARE_RECEIVED, array($owner), '', array(),
+						'', '', $shareWith, \OCA\Files_Sharing\Activity::TYPE_REMOTE_SHARE, 0);
+
 				return new \OC_OCS_Result();
 			} catch (\Exception $e) {
 				return new \OC_OCS_Result(null, 500, 'server can not add remote share, ' . $e->getMessage());
